@@ -1,3 +1,7 @@
+## Result
+![alt text][logo]
+[logo]: https://raw.githubusercontent.com/manuelro/canvas-image-hue/master/result.gif "Result"
+
 ### Changing image hue with HTML5 Canvas
 Changing the hue of an image in the client side is not as easy as if you had some processor on a server specifically for that task. It requires many things:
 
