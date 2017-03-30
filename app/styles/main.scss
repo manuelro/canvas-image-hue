@@ -1,0 +1,89 @@
+$icon-font-path: '../fonts/';
+
+.o-display--none {
+  display: none;
+}
+.o-align--horz {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.o-align--vert {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.o-middle-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+}
+
+body {
+  overflow: hidden;
+}
+
+canvas {
+  z-index: 50;
+}
+
+#colors{
+  @extend .o-align--horz;
+
+  padding-left: 0px;
+  position: absolute;
+  bottom: 15px;
+  z-index: 100;
+}
+
+$color-size: 40px;
+.color {
+  width: $color-size;
+  height: $color-size;
+  list-style: none;
+  transition: all 0.2s ease-out;
+  float: left;
+  border-radius: $color-size / 2;
+  margin: 5px;
+}
+.color:hover {
+  transform: scale(1.4);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+$visible-border: 3px solid silver;
+$loader-size: 100px;
+.loader {
+  border-left: $visible-border;
+  border-top: $visible-border;
+  border-bottom: $visible-border;
+  border-radius: $loader-size / 2;
+
+  box-sizing: border-box;
+
+  width: $loader-size;
+  height: $loader-size;
+  z-index: 200;
+
+  animation: spin 4s infinite linear;
+  transform-origin: 50% 50%;
+
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+  z-index: 0;
+}
